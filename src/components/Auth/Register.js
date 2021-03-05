@@ -11,7 +11,8 @@ const Register = () => {
         let obj = {
             ...user,
             [e.target.name]: e.target.value,
-            id: Date.now()
+            id: Date.now(),
+            friends: []
         };
         setUser(obj)
     }
@@ -51,12 +52,15 @@ const Register = () => {
             <input type={'text'} onChange={handleInp} name='lastname' />
             <h5>Email</h5>
             <input type={'email'} onChange={handleInp} name='account' />
+            <h5>Avatar</h5>
+            <input onChange={handleInp} type={'text'} name={'avatar'} />
+            <img className={'img-fluid col-5'} />
             <h5>Password</h5>
             <input type={'password'} onChange={handleInp} name={'password'} />
             <h5>Confirm Password</h5>
             <input type={'password'} onChange={e => setPassword(e.target.value)} name={'password2'} />
             <div>
-                <button className={'btn btn-primary'} onClick={signUp} >Sign Up</button>
+                <button className={'btn btn-dark'} onClick={signUp} >Sign Up</button>
             </div>
         </div>
     );
